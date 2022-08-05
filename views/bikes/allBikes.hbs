@@ -1,0 +1,53 @@
+
+<h1 class="title text-center">List of bikes</h1>
+
+{{!-- nav --}}
+
+<div class="filter-container">
+   <form action="/bikes/allBikes/precio-descendente" method="post">
+      <button>Precio descendente</button>
+   </form>
+
+   <form action="/bikes/allBikes/precio-ascendente" method="post">
+      <button>Precio ascendente</button>
+   </form>
+
+   <form action="/bikes/allBikes/peso-descendente" method="post">
+      <button>Peso descendente</button>
+   </form>
+
+   <form action="/bikes/allBikes/peso-ascendente" method="post">
+      <button>Peso ascendente</button>
+   </form>
+
+   <form action="/bikes/allBikes/a-z" method="post">
+      <button>A - Z</button>
+   </form>
+
+   <form action="/bikes/allBikes/z-a" method="post">
+      <button>Z - A</button>
+   </form>
+</div>
+
+<main class="allBikes">
+      {{#each allBikes}}
+      <article class="bike-card">
+
+         <div class="img-container">
+            <img src="{{this.image}}" alt="bike">
+         </div>
+         <h3 class="bike-title">{{this.name}}</h3>
+         <p class="info-container"><span class="bike-info">{{this.price}} €</span><span class="bike-info">{{this.weight}} kg</span><span class="bike-info">{{this.size}}</span></p>
+         <div class="button-container">
+            <button class="details-button"><a class="details-anchor" href="/bikes/{{this._id}}">Details</a></button>
+         </div>
+
+      </article>
+      {{/each}}
+
+</main>
+
+
+{{!-- footer --}}
+
+

@@ -1,0 +1,40 @@
+<h1 class="main-title text-center">Bienvenid@ a tu perfil {{user.username}}</h1>
+ {{#if user.deleteUser}}
+    <p class="text-center error">{{banMessage}}</p>
+ {{/if}}
+
+<div class="banner flex">
+    <a href="/users/profile/vendidas"><button>Bicis vendidas</button></a>
+    <a href="/users/profile/compradas"><button>Bicis compradas</button></a>
+    <a href="/users/create"><button>Vende una bici</button></a>
+</div>
+
+<h1 class="main-title text-center">Todas tus bicis</h1>
+    {{#if user.favBikes}}
+<section class="allBikes">
+        {{#each user.favBikes}}
+            <div class="bike-card">
+                <div class="img-container">
+                    <img src="{{this.image}}" alt="foto">
+                </div>
+                <h3 class="bike-title">{{this.name}}</h3>
+                <p class="info-container"> <span class="bike-info">{{this.size}}</span><span class="bike-info">{{this.colour}}</span><span class="bike-info"> {{this.price}}</span></p>
+                <p class="description"> {{this.description}}</p>
+                {{!-- <small>Última actualización</small> --}}
+                {{#if this.isSold}}
+                    <small class="text-center">Vendida</small>
+                {{/if}}
+            <div class="button-container-down">
+                <button class="details-button"> <a href="/users/{{this._id}}/edit">Update your bike</a></button>
+            <form action="/users/{{this._id}}/delete" method="post">
+                <button class="details-button delete">Delete the bike</button>
+            </div>
+            </form>
+            </div>
+        {{/each}}
+    </section>
+    {{else}}
+    <p class="text-center">Aún subido ninguna bici</p>
+    {{/if}}
+    
+

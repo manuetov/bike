@@ -1,0 +1,67 @@
+<h1 class="text-center">Add bikes</h1>
+
+<div class="banner flex">
+    <a href="/users/profile/vendidas"><button>Bicis vendidas</button></a>
+    <a href="/users/profile"><button>Volver al perfil</button></a>
+    <a href="/users/profile/compradas"><button>Bicis compradas</button></a>
+</div>
+
+<section class="sell">
+    {{#if user.favBikes}}
+    <h3>Vende otra bici !!!</h3>
+    {{else}}
+    <h3>Pon a la venta tu primera bici</h3>
+    {{/if}}
+</section>
+  
+  <main class="main-form">
+    <form action="/users/create" class="register-form" method="POST" enctype="multipart/form-data">
+
+      <div class="input-container">
+        <p class="label">Nombre</p>
+        <input class="input" type="text" name="name">
+      </div>
+
+      <div class="input-container">
+        <p class="label">Peso</p>
+        <input class="input" type="text" name="weight">
+      </div>
+    
+      <div class="input-container">
+        <p class="label">Talla</p>
+        <select class="input" name="size" multipe="true">
+            <option>infantil</option>
+            <option>adolescente</option>
+            <option>adulto</option>
+        </select>
+      </div>
+      
+      <div class="input-container">
+        <p class="label">Color</p>
+        <input class="input" type="text" name="colour">
+      </div>
+      
+      <div class="input-container">
+        <p class="label">Precio</p>
+        <input class="input" type="number" name="price">
+      </div>
+      
+      <div class="input-container">
+         <p class="label">Imagen</p>
+         <input class="input input-image" type="file" name="image">
+      </div>
+
+      <div class="input-container">
+        <p class="description-label-add">Descripción</p>
+        <textarea class="input" name="description" cols="30" rows="10" maxlength="150"></textarea>
+      </div>
+
+      {{#if user.deleteUser}}
+      <button class="form-button add-button" disabled>Baneado</button>
+      {{else}}
+      <button class="form-button add-button">Agregar bikes</button>
+      {{/if}}
+    </form>
+  </main>
+
+

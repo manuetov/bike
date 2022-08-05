@@ -1,0 +1,49 @@
+<div class="banner flex">
+    <a href="/users/profile"><button>Volver al perfil</button></a>
+</div>
+
+<h1 class="text-center">Edit bike</h1>
+  
+<main class="main-form">
+
+  <form action="/users/{{bike._id}}/edit" class="register-form" method="POST" enctype="multipart/form-data">
+
+  <div class="input-container">
+    <p class="label">Nombre </p>
+    <input type="text" name="name" class="input" value="{{bike.name}}">
+  </div>
+  
+  <div class="input-container">
+     <p class="label">Peso </p>
+    <input type="number" name="weight" class="input" value="{{bike.weight}}">
+  </div>
+  
+  <div class="input-container">
+    <p class="label"> Talla </p>
+    <select class="input" name="size" multipe="true">
+         <option>infantil</option>
+         <option>adolescente</option>
+         <option>adulto</option>
+    </select>
+  </div>
+
+  <div class="input-container">
+    <p class="label">Color </p>
+    <input type="text" name="colour" class="input" value="{{bike.colour}}">
+  </div>
+
+  <div class="input-container">
+    <p class="label">Precio </p>
+    <input type="number" name="price" class="input" value="{{bike.price}}">
+  </div>
+  
+  <div class="input-container">
+    <p class="description-label">Descripcion</p>
+    <textarea name="description" cols="20" rows="5" class="input" maxlength="150">{{bike.description}}</textarea>
+  </div>
+
+  <button>Edit bike</button>
+
+</form>
+
+</main>

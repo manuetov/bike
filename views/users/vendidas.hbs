@@ -1,0 +1,25 @@
+
+<div class="banner flex">
+    <a href="/users/profile/compradas"><button>Bicis compradas</button></a>
+    <a href="/users/profile"><button>Volver al perfil</button></a>
+    <a href="/users/create"><button>Vende una bici</button></a>
+</div>
+
+<h1 id="vendidas" class="text-center">Bicis vendidas</h1>
+        {{#if user3.soldBikes}}
+    <section class="allBikes">
+        {{#each user3.soldBikes}}
+            <div class="bike-card">
+                <div class="img-container">
+                    <img src="{{this.image}}" alt="foto">
+                </div>
+                <h2>{{this.name}}</h2>
+                <h3>{{this.weight}}</h3>
+                <h3>{{this.price}}</h3>
+                <p>{{this.description}}</p>
+            </div>
+        {{/each}}
+    </section>
+        {{else}}
+        <p class="text-center">Aún no has vendido ninguna bicicleta</p>
+        {{/if}}

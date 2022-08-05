@@ -1,0 +1,47 @@
+{{!-- nav --}}
+
+{{!-- search --}}
+
+<main class="oneBike">
+<h1 class="title"> Details of bike</h1>
+
+<article class="bike-card">
+  <div class="img-container">
+    <img src="{{oneBike.image}}" alt="bike">
+  </div>
+   <h3 class="bike-title text-center"> {{oneBike.name}}</h3>
+    <p class="info-container"><span class="bike-info">{{oneBike.price}} €</span><span class="bike-info">{{oneBike.weight}} kg</span><span class="bike-info">{{oneBike.size}}</span></p>
+   <p class="description"> {{oneBike.description}}</p>
+   <p class="text-center">Owner: {{oneBike.owner.username}}</p>
+ 
+  <div>
+    <form action="/comments/{{oneBike._id}}/create" method="post">
+      <p style="text-align: center"> <textarea style="inline-block" name="message" placeholder="leave your comment here"></textarea>
+      <button>Send</button></p>
+    </form>
+  </div>
+  <div>
+      {{#each allCommentsCloned}}
+        <p>{{this.creator.username}} wrote: {{this.text}}</p>
+        {{#if this.isMyComment }}
+        <form action="/comments/{{this._id}}/{{this.bike}}/delete" method="post" style="display: inline">
+          <button style="background-color: red">delete</button>
+        </form>
+        {{/if}}
+    {{/each}}
+  </div>
+
+   {{#if oneBike.isSold}}
+      <p class="text-center">Vendida</p>
+   {{/if}}
+   <div class="button-container">
+    {{#if oneBike.isSold}}
+    <button disabled class="details-button">Transferencia</button>
+    {{else}}
+    <a class="details-anchor" href="/transaction/{{bikeId}}"> <button class="details-button">Transferencia</button> </a>
+    {{/if}}
+   </div>
+</article>
+
+
+</main>

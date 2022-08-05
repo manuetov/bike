@@ -1,0 +1,26 @@
+<h1 class="text-center register">Register</h1>
+
+<p class="text-center error">{{errorMessage}}</p>
+
+<main class="main-form">
+    <form action="/auth/register" class="register-form" method="post">
+
+            <div class="input-container">
+                <p class="label">Username</p>
+                <input class="input" type="text" name="username">
+            </div>
+
+            <div class="input-container">
+                <p class="label">Email</p>
+                <input class="input" type="email" name="email">
+            </div>
+
+            <div class="input-container">
+                <p class="label">Password</p>
+                <input id="input" class="input" type="password" name="password">
+            </div>
+
+    <button class="form-button">Create User</button>
+
+    </form>
+</main>

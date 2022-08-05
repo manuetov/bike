@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Kanit", "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+.main-header{
+  background-color: white;
+}
+
+.block{
+  display: flex;
+  justify-content: center;
+}
+
+.OccasionBike{
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.home-button{
+  margin: auto;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  transform: scale(1);
+  transition: transform 0.4s;
+}
+
+.home-button:hover{
+  transform: scale(1.1);
+  transition: transform 0.4s;
+}
+
+.delete{
+  color: red;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(1);
+  transition: 0.4s;
+}
+
+img:hover{
+  transform: scale(1.1);
+  transition: transform 0.4s;
+}
+
+.title{
+  padding-bottom: 2rem;
+  color: var(--text-main-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.flex{
+  display: flex;
+}
+
+.logo-container{
+  max-width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.marb-2{
+  margin-bottom: 4rem !important;
+}
+
+nav a{
+  margin-right: 0.5rem;
+
+}
+
+.p-3{
+  padding: 3rem;
+}
+
+.user{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.main-title{
+  word-spacing: 0.6rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.allBikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.banner{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 760px){
+  .banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .banner button{
+    padding: 0.3rem 6rem;
+    width: 150px;
+    margin-bottom: 0.5rem;
+  }
+
+  .allBikes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bike-card {
+    border: 1px solid black;
+    /* transform: scale(1);
+    transition: 0.4s; */
+    margin-right: 2rem;
+    width: 320px;
+    border-radius: 2px;
+  }
+
+  .filter-container{
+    width: auto;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+  }
+  
+  .filter-container button {
+    padding: 0.3rem 0.6rem;
+    margin-inline: 0.75rem;
+    width: max-content;
+  }
+  
+}
+
+.error{
+  color: red;
+}
+
+.banner button{
+  padding: 0.5rem 1rem;
+}
+
+.oneBike {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bike-card {
+  border: 1px solid black;
+  /* transform: scale(1);
+  transition: 0.4s; */
+  margin-right: 2rem;
+  width: 350px;
+}
+
+.description{
+  padding: 0.4rem;
+}
+
+
+.img-container {
+  max-width: 400px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.bike-title{
+  font-family: 'Kanit';
+  font-weight: 400;
+  font-size: 2.25rem;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+}
+
+.bike-info {
+  display: block;
+}
+
+.btn{
+  padding: 0.5rem 0.75rem;
+}
+
+.button-container-down {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+p{
+  margin-bottom: 0;
+}
+
+.green{
+  color: green;
+}
+
+.details-button {
+  padding: 0.5rem 1rem;
+  margin: auto;
+}
+
+.details-anchor {
+  display: block;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.details-button:hover .details-anchor{
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+
+.description-label{
+  position: absolute;
+  left: 5%;
+  top: -10%;
+  z-index: 10;
+  background-color: white;
+  padding-inline: 0.2rem;
+  display: inline-block;
+}
+
+.main-header {
+  padding-bottom: 1.5rem;
+}
+
+.main-form {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-container{
+  position: relative;
+}
+
+.label{
+  position: absolute;
+  left: 5%;
+  top: -40%;
+  z-index: 10;
+  background-color: white;
+  padding-inline: 0.2rem;
+  display: inline-block;
+}
+
+.input{
+  padding: 0.2rem 0.3rem;
+}
+
+.input-image{
+  padding: 0.2rem 0rem;
+}
+
+.register{
+  padding-bottom: 1rem;
+}
+
+.form-button {
+  padding: 0.35rem;
+  border-radius: 3px;
+}
+
+.add-button{
+  padding: 0.5rem 0rem;
+}
+
+.description-label-add{
+  position: absolute;
+  left: 5%;
+  top: -5.5%;
+  z-index: 10;
+  background-color: white;
+  padding-inline: 0.2rem;
+  display: inline-block;
+}
+
+.filter-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.filter-container button {
+  padding: 0.5rem 1rem;
+  margin-inline: 0.75rem;
+  width: max-content;
+}
+
+#compradas{
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.sell{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.errorMessage{
+  padding: 1rem 0;
+  color: red;
+}

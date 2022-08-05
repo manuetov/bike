@@ -1,0 +1,22 @@
+
+<div class="button-container marb-2">
+   <a href="/users/admin-profile/"><button class="details-button">User list</button></a>
+</div>
+<main class="allBikes">
+   <div class="user">
+      <p>{{user.username}}</p>
+      <p>{{user.email}}</p>
+      {{#if user.deleteUser}}
+      <form action="/users/admin-users/{{user._id}}/autorize" method="POST">
+         <button class="details-button green">Volver a autorizar</button>
+      </form>
+      {{else}}
+      <form action="/users/admin-users/{{user._id}}/delete" method="POST">
+         <button class="details-button error">Banear</button>
+      </form>
+      {{/if}}
+   </div>
+</main>
+
+  
+
