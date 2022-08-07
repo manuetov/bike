@@ -1,6 +1,5 @@
 const User = require("../models/User.model")
 const Bike = require("../models/Bike.model")
-const Comment = require ('../models/Comment.model.js')
 const router = require("express").Router()
 const imageLoader = require("../middlewares/multer")
 const {isLogged, isAdmin} = require("../middlewares/auth")

@@ -90,8 +90,9 @@ router.get('/:bikeId', isLogged, async (req, res, next) => {
       const allComments = await Comment.find({bike: bikeId}).populate('creator')
       const allCommentsCloned = JSON.parse(JSON.stringify(allComments))
       allCommentsCloned.forEach((eachComment) => {
+         //variable para que solo el usuario que hace el comentario pueda borrarlo o el admin 
          eachComment.isMyComment = false  
-         if(req.session.user._id == eachComment.creator._id)
+         if(req.session.user._id == eachComment.creator._id || req.session.user.role === 'admin')
             eachComment.isMyComment = true
       })
       console.log(allCommentsCloned);
